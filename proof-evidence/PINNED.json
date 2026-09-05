@@ -1,0 +1,68 @@
+{
+  "amendable": false,
+  "amendments": 0,
+  "attempt": 2,
+  "authorized_by": "control#3 Browser Sol ruling 5552786359 (Option A) under captain staged authorization 5552194003",
+  "bounds": {
+    "expires_at": "2026-09-08T23:59:00Z"
+  },
+  "control_transport": {
+    "family": "fm-sol-control/v2",
+    "issue": "NEW dedicated issue for this correlation id",
+    "labels": [
+      "control/escalation",
+      "to/browser-sol"
+    ],
+    "ruler": "browser-sol (rules the typed v2 request directly; no captain relay)",
+    "venue_repo": "sbracewell64/firstmate-cleanroom-control"
+  },
+  "decision": {
+    "consumption_rule": "B-S11 applies the ruled option's byte-pinned patch to the correct (non-stale) head; applied-bytes identity = produced tree matches the pinned patch, changed paths subset of {fmproof/semver.py, tests/test_build_metadata_decision.py}.",
+    "options": {
+      "A": {
+        "patch": "inputs/option-A.patch",
+        "patch_sha256": "7c185bdf838dda661a9dc41484c6afdbb57d91f6a4d0ad2a0d1116ad85372030",
+        "summary": "IGNORED in precedence (SemVer 2.0.0 section 10, spec-correct)"
+      },
+      "B": {
+        "patch": "inputs/option-B.patch",
+        "patch_sha256": "ba0a52ea1a010b093f9ca97c1d263b9ea7496cc61211d00ca0ef022c02fa08ee",
+        "summary": "compared as a lexical tiebreaker (non-spec)"
+      }
+    },
+    "question": "In semver precedence comparison, how is build metadata (+build) treated?"
+  },
+  "fold_rule": {
+    "aim": "exercise every live falsifier observed-good EXCEPT the pre-accepted independence CNO; PROVED is NOT aimed at this attempt",
+    "expected_terminal_outcome": "CNO_AT_B-S9 (independence), unless an earlier stage folds bad/CNO first",
+    "independence_predicate": "could-not-observe (one forge account fronts both maker and ruler; NEVER convert one account/role/connector/self-asserted label into distinct-principal proof)",
+    "outcome_is": "FOLDED from observations.jsonl, never asserted; PROVED requires every stage observed-good through post-merge identity AND gap-free strictly-increasing trace coverage",
+    "precedence": "FAIL > CNO > PASS"
+  },
+  "notes": "attempt-1 is recorded as-is and NOT reinterpreted. Second-principal independence run is optional future evidence, not a prerequisite (ruling 5552786359).",
+  "pinned_at": "2026-09-05T15:30:59Z",
+  "proof_id": "proof-b",
+  "schema": "fm-proof-pin/v1",
+  "stages_falsifiers": {
+    "B-S10": "exact-head ladder L1-L5 at H0; THEN push H1 (head moves) and re-check -> L1 observed-bad -> stale ruling REJECTED (the live negative control attempt-1 could not run)",
+    "B-S11": "byte-identity consumption of the ruled option patch at the correct head; successor generation for the moved head if re-ruling is needed",
+    "B-S12": "receipt + issue close (WITHDRAWN/receipt on supersession; never delete an issue or edit another party's comment)",
+    "B-S13": "exact-head no-mistakes requalification (pytest green at the final head) + gated landing via fresh minted authorization (never transferred from the ruling)",
+    "B-S3": "boundary predicate BP1-BP7 incl. machine reversibility test + captain-reserved deny list",
+    "B-S4": "compile the v2 request from exact machine state (forge reads/commands only, none from prose/memory)",
+    "B-S5": "decision-readiness probe: every evidence locator third-party resolvable; one INACCESSIBLE locator control -> could-not-observe",
+    "B-S6": "emit the typed v2 request on the new control issue; start 'unrelated eligible work continues while Sol awaited' evidence",
+    "B-S8": "retrieve the ruling COMPLETELY with pagination (fetched==reported else CNO_INCOMPLETE_UNIVERSE); replay/idempotence: re-fetch+re-consume -> identical, zero duplicate effect",
+    "B-S9": "V1-V10 validation ladder; V7 principal-independence PINNED could-not-observe (standing grade cap)"
+  },
+  "subject": {
+    "base": "main",
+    "base_sha_at_pin": "fcdc9b748ea00966ef2dd4c795f613b7cb2fecae",
+    "candidate_branch": "proof-b2-candidate",
+    "candidate_pr": 1,
+    "candidate_url": "https://github.com/sbracewell64/fm-cleanroom-proof-b2/pull/1",
+    "head_H0": "b73535e2da192262f67ba48011874f1cf0a9a534",
+    "mutability": "OPEN PR; head is movable. Mutation pushes a follow-up commit H1 != H0 to exercise live stale-ruling rejection (B-S10).",
+    "repo": "sbracewell64/fm-cleanroom-proof-b2"
+  }
+}
