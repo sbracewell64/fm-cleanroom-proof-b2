@@ -1,0 +1,31 @@
+{
+  "attempt": 2,
+  "counts": {
+    "could_not_observe": 1,
+    "observed_bad": 1,
+    "observed_good": 40
+  },
+  "folding_rule": "FAIL > CNO > PASS; earliest by stage order; outcome folded from observations.jsonl, never asserted",
+  "gating_cno": [
+    {
+      "measured": "ruler.login=browser-sol in maker_logins=True (one forge principal fronts both)",
+      "predicate": "V7 maker/checker independence at the forge-principal level",
+      "stage": "B-S9"
+    }
+  ],
+  "gating_fail": [
+    {
+      "predicate": "exact-head requalification: full test suite passes at the consumed head 6f319c1e4c43",
+      "stage": "B-S13"
+    }
+  ],
+  "landed": "sbracewell64/fm-cleanroom-proof-b2 PR #1 merged (squash); Option A (ignore build metadata in precedence, SemVer 2.0.0 s10) adopted",
+  "outcome": "FAIL_AT_B-S13",
+  "principal_independence": "could-not-observe (standing RETAIN_AS_GRADE_CAP; one forge principal fronts maker and ruler; NOT a blocker)",
+  "proof_id": "proof-b",
+  "refusals_handled": [
+    "B-S13 exact-head requalification fired on a pre-existing baseline test contradicting ruled Option A; reconciled by the smallest in-scope correction, then requalified green and landed"
+  ],
+  "ruling": "sol-ruling-proof-b2-semver-build-metadata-20260905-a (ADOPT_OPTION A)",
+  "schema": "fm-proof-disposition/v1"
+}
